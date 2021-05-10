@@ -26,7 +26,7 @@ public class TranslateWords {
         BufferedReader r3=new BufferedReader(new FileReader("C:\\Users\\lenovo\\OneDrive\\Desktop\\TranslateWordsChallenge\\french_dictionary.csv"));
         
         CSVWriter w2=new CSVWriter(new FileWriter("C:\\Users\\lenovo\\OneDrive\\Desktop\\TranslateWordsChallenge\\frequency.csv"));
-        String li2[]={"English Word","Frequency"};
+        String li2[]={"English Word","French Word","Frequency"};
         w2.writeNext(li2);
         String line=r1.readLine();
         String line1="";
@@ -102,7 +102,7 @@ public class TranslateWords {
             line=r1.readLine();
         }
         for(Map.Entry<String,Integer> e:map.entrySet()){
-            String li[]={e.getKey(),Integer.toString(e.getValue())};
+            String li[]={e.getKey(),map1.get(e.getKey()),Integer.toString(e.getValue())};
             w2.writeNext(li);
         }
         r1.close();
